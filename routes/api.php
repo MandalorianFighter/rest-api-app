@@ -24,3 +24,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1', 'm
 
     Route::post('invoices/bulk', ['uses' => 'InvoiceController@bulkStore']);
 });
+
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1'], function() {
+    Route::apiResource('cases', CovidCaseController::class);
+});
